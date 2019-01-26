@@ -6,8 +6,10 @@ public class NewBehaviourScript : MonoBehaviour
 {
   public GameObject player;
   public GameObject platform;
+  public GameObject ground;
   private BoxCollider2D playerBox;
   private BoxCollider2D platformBox;
+  private BoxCollider2D groundBox;
 
   //movement variables
   public int playerSpeedY = 1200;
@@ -18,9 +20,11 @@ public class NewBehaviourScript : MonoBehaviour
   void Start()
   {
     player      = GameObject.Find("Player");
-    platform    = GameObject.Find("platform"); // platform is also the ground
+    platform    = GameObject.Find("platform");
+    ground      = GameObject.Find("ground");
     playerBox   = player.GetComponent<BoxCollider2D>();
     platformBox = platform.GetComponent<BoxCollider2D>();
+    groundBox   = ground.GetComponent<BoxCollider2D>();
   }
 
   // Update is called once per frame
@@ -32,7 +36,7 @@ public class NewBehaviourScript : MonoBehaviour
   void PlayerMovement() {
     // controls
     if (Input.GetKeyDown(KeyCode.UpArrow)) {
-      if (playerBox.IsTouching(platformBox)) {
+      if ( (playerBox.IsTouching(platformBox)) || (playerBox.IsTouching(groundBox)) ) {
         Jump();
       }
     }
