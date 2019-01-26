@@ -1,0 +1,6 @@
+title: Memory2
+tags: 
+colorID: 0
+position: 524,111
+---
+Memory2: You find a cozy blanket. A soft scent lingers; cinnamon and vanilla...
