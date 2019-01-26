@@ -31,9 +31,6 @@ using System.Collections.Generic;
 namespace Yarn.Unity.Example {
     public class PlayerCharacter : MonoBehaviour {
 
-        public float minPosition = -5.3f;
-        public float maxPosition = 5.3f;
-
         public float moveSpeed = 1.0f;
 
         public float interactionRadius = 2.0f;
@@ -67,7 +64,6 @@ namespace Yarn.Unity.Example {
 
             var newPosition = transform.position;
             newPosition.x += movement;
-            newPosition.x = Mathf.Clamp(newPosition.x, minPosition, maxPosition);
 
             transform.position = newPosition;
 

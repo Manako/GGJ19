@@ -40,10 +40,10 @@ namespace Yarn.Unity.Example {
         public Transform target;
 
         /// Minimum position of camera
-        public float minPosition = -5.3f;
+//        public float minPosition = -5.3f;
 
         /// Maximum position of camera
-        public float maxPosition = 5.3f;
+//        public float maxPosition = 5.3f;
 
         /// Movement speed of camera
         public float moveSpeed = 1.0f;
@@ -55,7 +55,7 @@ namespace Yarn.Unity.Example {
             }
             var newPosition = Vector3.Lerp(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-            newPosition.x = Mathf.Clamp(newPosition.x, minPosition, maxPosition);
+//            newPosition.x = Mathf.Clamp(newPosition.x, minPosition, maxPosition);
             newPosition.y = transform.position.y;
             newPosition.z = transform.position.z;
 
