@@ -1,0 +1,6 @@
+title: Memory4
+tags: 
+colorID: 0
+position: 524,111
+---
+Memory4: You find a chipped mug. Sleepy mornings, cuddles and smiles fill your vision like a daydream...

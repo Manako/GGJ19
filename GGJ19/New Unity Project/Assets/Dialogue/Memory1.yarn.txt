@@ -1,0 +1,6 @@
+title: Memory1
+tags: 
+colorID: 0
+position: 524,111
+---
+Memory1: You find a box wrapped in bright fabric. The lunchbox reminds you of the last meal prepared by loving hands...
