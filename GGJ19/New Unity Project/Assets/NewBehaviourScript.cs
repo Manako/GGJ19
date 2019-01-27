@@ -16,7 +16,6 @@ public class NewBehaviourScript : MonoBehaviour
     public float playerSpeedX = 1.0f;
     private float playerMoveX;
 
-
     private Animator animator;
 
     private void Awake()
