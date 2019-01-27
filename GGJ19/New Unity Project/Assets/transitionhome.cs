@@ -37,7 +37,7 @@ public class transitionhome : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("End1");
+            SceneManager.LoadScene("Level1");
         }
     }
 }
