@@ -58,12 +58,15 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 Jump();
             }
-            foreach (var platformBox in platformBoxes)
+            else
             {
-                if (playerBox.IsTouching(platformBox))
+                foreach (var platformBox in platformBoxes)
                 {
-                    Jump();
-                    break;
+                    if (playerBox.IsTouching(platformBox))
+                    {
+                        Jump();
+                        break;
+                    }
                 }
             }
         }
