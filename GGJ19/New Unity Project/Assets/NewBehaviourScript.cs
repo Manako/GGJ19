@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
   public GameObject player;
   public GameObject platform;
   public GameObject ground;
+  public GameObject doorhome;
   private BoxCollider2D playerBox;
   private BoxCollider2D platformBox;
   private BoxCollider2D groundBox;
@@ -30,6 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
     player      = GameObject.Find("Player");
     platform    = GameObject.Find("platform");
     ground      = GameObject.Find("ground");
+        doorhome = GameObject.Find("doorhome");
     playerBox   = player.GetComponent<BoxCollider2D>();
     platformBox = platform.GetComponent<BoxCollider2D>();
     groundBox   = ground.GetComponent<BoxCollider2D>();
