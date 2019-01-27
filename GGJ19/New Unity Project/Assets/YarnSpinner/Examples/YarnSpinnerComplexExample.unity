@@ -3223,12 +3223,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 664169323926013644, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 38.76238
+      objectReference: {fileID: 0}
+    - target: {fileID: 664169323926013644, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 16.477524
+      objectReference: {fileID: 0}
     - target: {fileID: 664169323926013645, guid: 65420479d38ca7c41803a1988b98acef,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c4ea62fbcb577f040995183cc20faa19,
         type: 3}
+    - target: {fileID: 664169323926013645, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 664169323926013645, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_SpriteTileMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664169323926013645, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 664169323926013645, guid: 65420479d38ca7c41803a1988b98acef,
+        type: 3}
+      propertyPath: m_AdaptiveModeThreshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65420479d38ca7c41803a1988b98acef, type: 3}
 --- !u!1001 &1307712459812648762
