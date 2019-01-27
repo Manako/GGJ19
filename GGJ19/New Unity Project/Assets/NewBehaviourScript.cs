@@ -76,7 +76,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         var newPosition = transform.position;
         newPosition.x += playerMoveX;
-        animator.Play("pip_walk");
         transform.position = newPosition;
 
 

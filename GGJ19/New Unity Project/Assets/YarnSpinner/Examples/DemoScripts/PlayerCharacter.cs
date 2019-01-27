@@ -51,6 +51,7 @@ namespace Yarn.Unity.Example {
 
         /// Update is called once per frame
         void Update () {
+            var animator = GetComponent<Animator>();
 
             // Remove all player control when we're in dialogue
             if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true) {
@@ -60,11 +61,16 @@ namespace Yarn.Unity.Example {
             // Move the player, clamping them to within the boundaries 
             // of the level.
             var movement = Input.GetAxis("Horizontal");
+            var curAnim =animator.GetCurrentAnimatorStateInfo(0);
             if (movement<0) {
                 GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX=true;
+                if(!curAnim.IsName("pip_walk") && !curAnim.IsName("pip_jump"))
+                   animator.Play("pip_walk", 0, 1);
             }
             if (movement>0) {
                 GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX=false;
+                if (!curAnim.IsName("pip_walk") && !curAnim.IsName("pip_jump"))
+                    animator.Play("pip_walk", 0, 1);
             }
             movement += movementFromButtons;
             movement *= (moveSpeed * Time.deltaTime);
