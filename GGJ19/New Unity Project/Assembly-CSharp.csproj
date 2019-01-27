@@ -74,7 +74,6 @@
      <None Include="Assets\Dialogue\Memory2.yarn.txt" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.AccountManagement.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Services.xml" />
-     <None Include="Assets\YarnSpinner\Examples\DemoAssets\SimpleExampleScript.yarn.txt" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Messaging.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.xml" />
