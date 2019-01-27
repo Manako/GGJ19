@@ -84,6 +84,27 @@ namespace Yarn.Unity.Example {
             if (Input.GetKeyDown(KeyCode.Space)) {
                 CheckForNearbyNPC ();
             }
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                CheckForNearbyItem ();
+            }
+        }
+
+        // Check for dialogue item
+        public void CheckForNearbyItem() {
+            var allItems = new List<draggableItemScript> (FindObjectsOfType<draggableItemScript> ());
+            var target = allItems.Find (delegate (draggableItemScript p) {
+                return string.IsNullOrEmpty (p.talkToNode) == false && // has a conversation node?
+                (p.transform.position - Input.mousePosition)// is in range?
+                .magnitude <= interactionRadius;
+            });
+
+            if (target != null)
+            {
+                // Kick off the dialogue at this node.
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+
+            }
         }
 
         /// Find all DialogueParticipants
@@ -100,34 +121,36 @@ namespace Yarn.Unity.Example {
             });
             
             // set target as inactive
-            string targetName = target.name;
-            char[] delimiters = { '(', ')', ' '};
-            string[] words = targetName.Split(delimiters);
-            string dragTargetName = words[3];
-            GameObject targ = GameObject.Find(targetName);
-            GameObject dragTarget = null;
-            //Draggable is inactive, have to use the complicated search.
-            var finder = Resources.FindObjectsOfTypeAll<GameObject>(); 
-            foreach (var findy in finder)
-            {
-                if (findy.name == dragTargetName)
-                {
-                    dragTarget = findy;
-                    break;
-                }
-            }
-            if (targ && dragTarget)
-            {
-                dragTarget.GetComponent<draggableItemScript>().FindMe(dragTargetName);
-                dragTarget.SetActive(true);
-                targ.SetActive(false);
 
-            }
             if (target != null)
             {
                 // Kick off the dialogue at this node.
                 FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
 
+            
+                string targetName = target.name;
+                char[] delimiters = { '(', ')', ' '};
+                string[] words = targetName.Split(delimiters);
+                string dragTargetName = words[3];
+                GameObject targ = GameObject.Find(targetName);
+                GameObject dragTarget = null;
+                //Draggable is inactive, have to use the complicated search.
+                var finder = Resources.FindObjectsOfTypeAll<GameObject>(); 
+                foreach (var findy in finder)
+                {
+                    if (findy.name == dragTargetName)
+                    {
+                        dragTarget = findy;
+                        break;
+                    }
+                }
+                if (targ && dragTarget)
+                {
+                    dragTarget.GetComponent<draggableItemScript>().FindMe(dragTargetName);
+                    dragTarget.SetActive(true);
+                    targ.SetActive(false);
+
+                }
             }
         }
     }
