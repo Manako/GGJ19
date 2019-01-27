@@ -17,10 +17,12 @@ public class NewBehaviourScript : MonoBehaviour
     private float playerMoveX;
 
     private Animator animator;
+    private AudioSource jumpSound;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -89,5 +91,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerSpeedY);
         animator.Play("pip_jump", 0, 1);
+        jumpSound.Play();
     }
 }

@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_Text: "\tYou hear a knock on the door. Your parents are there, frowning at you.
     You look at them shyly. \n\t\"Pip,\" they scold. \"What did we tell you about
     going on adventures without telling us!\" You smile, scratching your head.\n\t\"Sorry...\"
-    They give you exasperated sighs before huging you warmly.\n\t\"We forgive you,\"
+    They give you exasperated sighs before hugging you warmly.\n\t\"We forgive you,\"
     they say. \"You're an Adventurer after all.\""
 --- !u!222 &1114405104
 CanvasRenderer:
