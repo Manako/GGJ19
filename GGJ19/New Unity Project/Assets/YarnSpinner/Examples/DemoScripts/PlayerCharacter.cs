@@ -85,9 +85,12 @@ namespace Yarn.Unity.Example {
                 (p.transform.position - this.transform.position)// is in range?
                 .magnitude <= interactionRadius;
             });
+            Debug.Log("target is" + target);
+            GameObject.Find(target.name).SetActive(false);
             if (target != null) {
                 // Kick off the dialogue at this node.
                 FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
+                
             }
         }
     }
