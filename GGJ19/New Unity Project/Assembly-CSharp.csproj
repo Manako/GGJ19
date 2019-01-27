@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\draggableItemScript.cs" />
+     <Compile Include="Assets\foundItems.cs" />
      <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\YarnSpinner\Code\DialogueRunner.cs" />
      <Compile Include="Assets\YarnSpinner\Examples\DemoScripts\CameraFollow.cs" />

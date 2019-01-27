@@ -24,6 +24,7 @@ SOFTWARE.
 
 */
 
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,8 +60,15 @@ namespace Yarn.Unity.Example {
             // Move the player, clamping them to within the boundaries 
             // of the level.
             var movement = Input.GetAxis("Horizontal");
+            if (movement<0) {
+                GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX=true;
+            }
+            if (movement>0) {
+                GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX=false;
+            }
             movement += movementFromButtons;
             movement *= (moveSpeed * Time.deltaTime);
+            Debug.Log("movement: " + movement);
 
             var newPosition = transform.position;
             newPosition.x += movement;
@@ -85,8 +93,18 @@ namespace Yarn.Unity.Example {
                 (p.transform.position - this.transform.position)// is in range?
                 .magnitude <= interactionRadius;
             });
-            Debug.Log("target is" + target);
-            GameObject.Find(target.name).SetActive(false);
+            
+            // set target as inactive
+            string targetName = target.name;
+            GameObject.Find(targetName).SetActive(false);
+
+            char[] delimiters = { '(', ')', ' '};
+            string[] words = targetName.Split(delimiters);
+            string myTarget = words[3];
+            Debug.Log("target is now " + myTarget);
+            
+            GameObject.Find(myTarget).GetComponent<draggableItemScript>().hasBeenFound = true;
+
             if (target != null) {
                 // Kick off the dialogue at this node.
                 FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
