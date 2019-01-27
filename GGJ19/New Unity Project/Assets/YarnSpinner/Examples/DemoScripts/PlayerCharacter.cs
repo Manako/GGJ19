@@ -68,7 +68,6 @@ namespace Yarn.Unity.Example {
             }
             movement += movementFromButtons;
             movement *= (moveSpeed * Time.deltaTime);
-            Debug.Log("movement: " + movement);
 
             var newPosition = transform.position;
             newPosition.x += movement;
@@ -102,13 +101,19 @@ namespace Yarn.Unity.Example {
             string[] words = targetName.Split(delimiters);
             string myTarget = words[3];
             Debug.Log("target is now " + myTarget);
-            
-            GameObject.Find(myTarget).GetComponent<draggableItemScript>().hasBeenFound = true;
 
-            if (target != null) {
+            GameObject targ = GameObject.Find(targetName);
+            if (targ)
+            {
+                targ.GetComponent<draggableItemScript>().hasBeenFound = true;
+
+
+            }
+            if (target != null)
+            {
                 // Kick off the dialogue at this node.
-                FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
-                
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+
             }
         }
     }
