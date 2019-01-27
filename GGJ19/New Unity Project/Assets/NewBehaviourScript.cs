@@ -16,8 +16,16 @@ public class NewBehaviourScript : MonoBehaviour
   public float playerSpeedX = 1.0f;
   private float playerMoveX;
 
-  // Start is called before the first frame update
-  void Start()
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
   {
     player      = GameObject.Find("Player");
     platform    = GameObject.Find("platform");
@@ -47,8 +55,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     var newPosition = transform.position;
     newPosition.x += playerMoveX;
-
-    transform.position = newPosition;
+   animator.SetInteger("animState", 1);
+   transform.position = newPosition;
 
 
     // player direction
@@ -59,5 +67,6 @@ public class NewBehaviourScript : MonoBehaviour
 
   void Jump() {
     GetComponent<Rigidbody2D>().AddForce(Vector2.up*playerSpeedY);
-  }
+    animator.SetInteger("animState", 2);
+    }
 }
