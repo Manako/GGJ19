@@ -7,6 +7,12 @@ public class draggableItemScript : MonoBehaviour
     public string itemName = "";
     public bool hasBeenFound = false;
 
+    public void FindMe(string name)
+    {
+        hasBeenFound = true;
+        itemName = name;
+        Debug.Log("item has been found! " + itemName);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +22,5 @@ public class draggableItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hasBeenFound){
-            Debug.Log("item has been found! "+ itemName);
-            GameObject.Find(itemName).SetActive(true);
-        }
     }
 }

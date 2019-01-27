@@ -95,18 +95,26 @@ namespace Yarn.Unity.Example {
             
             // set target as inactive
             string targetName = target.name;
-            GameObject.Find(targetName).SetActive(false);
-
             char[] delimiters = { '(', ')', ' '};
             string[] words = targetName.Split(delimiters);
-            string myTarget = words[3];
-            Debug.Log("target is now " + myTarget);
-
+            string dragTargetName = words[3];
             GameObject targ = GameObject.Find(targetName);
-            if (targ)
+            GameObject dragTarget = null;
+            //Draggable is inactive, have to use the complicated search.
+            var finder = Resources.FindObjectsOfTypeAll<GameObject>(); 
+            foreach (var findy in finder)
             {
-                targ.GetComponent<draggableItemScript>().hasBeenFound = true;
-
+                if (findy.name == dragTargetName)
+                {
+                    dragTarget = findy;
+                    break;
+                }
+            }
+            if (targ && dragTarget)
+            {
+                dragTarget.GetComponent<draggableItemScript>().FindMe(dragTargetName);
+                dragTarget.SetActive(true);
+                targ.SetActive(false);
 
             }
             if (target != null)
