@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &257417986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -525,9 +525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":103.4645,"y":-14.44777},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-372.0,"y":-180.0},"guid":"d1b61475-ea6c-48be-a8d4-24bc4535332c","$version":"A","$type":"Bolt.OnButtonClick","$id":"10"},{"chainable":false,"member":{"name":"LoadScene","parameterTypes":["System.String"],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{"%sceneName":{"$content":"YarnSpinnerComplexExample","$type":"System.String"}},"position":{"x":-152.0,"y":-224.0},"guid":"11dffa38-7a88-4b8a-af20-5aa6e51d4e43","$version":"A","$type":"Bolt.InvokeMember","$id":"12"},{"chainable":false,"member":{"name":"Play","parameterTypes":[],"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":null},"position":{"x":303.0,"y":-156.0},"guid":"5cb5c143-9998-4ae1-ac12-c6c348f24357","$version":"A","$type":"Bolt.InvokeMember","$id":"15"},{"type":"UnityEngine.AudioClip","value":{"$content":0,"$type":"UnityEngine.AudioClip"},"defaultValues":{},"position":{"x":107.0,"y":54.0},"guid":"c88e4978-968e-4009-8cd1-624ad42b789f","$version":"A","$type":"Bolt.Literal"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"c60bf913-894f-4076-9c04-0342741dd512","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"12"},"sourceKey":"exit","destinationUnit":{"$ref":"15"},"destinationKey":"enter","guid":"81805411-4ead-466f-b4f3-e9622239b14a","$type":"Bolt.ControlConnection"}],"$version":"A"}}}'
-    _objectReferences:
-    - {fileID: 8300000, guid: 2b2170779035a28458ed13929e0904ab, type: 3}
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":103.4645,"y":-14.44777},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-372.0,"y":-180.0},"guid":"d1b61475-ea6c-48be-a8d4-24bc4535332c","$version":"A","$type":"Bolt.OnButtonClick","$id":"10"},{"chainable":false,"member":{"name":"LoadScene","parameterTypes":["System.String"],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{"%sceneName":{"$content":"YarnSpinnerComplexExample","$type":"System.String"}},"position":{"x":-152.0,"y":-224.0},"guid":"11dffa38-7a88-4b8a-af20-5aa6e51d4e43","$version":"A","$type":"Bolt.InvokeMember","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"c60bf913-894f-4076-9c04-0342741dd512","$type":"Bolt.ControlConnection"}],"$version":"A"}}}'
+    _objectReferences: []
 --- !u!114 &303027729
 MonoBehaviour:
   m_ObjectHideFlags: 0
