@@ -34,8 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
         platformBoxes = new List<BoxCollider2D>();
         foreach (GameObject go in Resources.FindObjectsOfTypeAll<GameObject>())
         {
-            Debug.Log(go.name);
-            if (go.name == "platform")
+            if (go.tag == "platform")
             {
                 platforms.Add(go);
                 platformBoxes.Add(go.GetComponent<BoxCollider2D>());
